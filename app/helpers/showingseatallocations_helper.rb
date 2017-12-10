@@ -1,0 +1,2 @@
+module ShowingseatallocationsHelper
+end

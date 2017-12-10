@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  screenname: MyString
+  rows: 1
+  width: 1
+  seating: MyText
+
+two:
+  screenname: MyString
+  rows: 1
+  width: 1
+  seating: MyText

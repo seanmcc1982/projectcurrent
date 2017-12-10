@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Showings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Price</th>
+      <th>Screen</th>
+      <th>Film</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @showings.each do |showing| %>
+      <tr>
+        <td><%= showing.slot %></td>
+        <td><%= showing.price %></td>
+        <td><%= showing.screen %></td>
+        <td><%= showing.film %></td>
+        <td><%= link_to 'Show', showing %></td>
+        <td><%= link_to 'Edit', edit_showing_path(showing) %></td>
+        <td><%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Showing', new_showing_path %>

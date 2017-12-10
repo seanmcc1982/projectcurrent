@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Showing:</strong>
+  <%= @bookingshowing.showing_id %>
+</p>
+
+<p>
+  <strong>Filmtitle:</strong>
+  <%= @bookingshowing.filmtitle %>
+</p>
+
+<p>
+  <strong>Screenname:</strong>
+  <%= @bookingshowing.screenname %>
+</p>
+
+<p>
+  <strong>Seat:</strong>
+  <%= @bookingshowing.seat %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @bookingshowing.price %>
+</p>
+
+<p>
+  <strong>Booking:</strong>
+  <%= @bookingshowing.booking %>
+</p>
+
+<%= link_to 'Edit', edit_bookingshowing_path(@bookingshowing) %> |
+<%= link_to 'Back', bookingshowings_path %>

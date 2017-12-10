@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Showingseatallocations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Seatallocation</th>
+      <th>Rows</th>
+      <th>Width</th>
+      <th>Showing</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @showingseatallocations.each do |showingseatallocation| %>
+      <tr>
+        <td><%= showingseatallocation.seatallocation %></td>
+        <td><%= showingseatallocation.rows %></td>
+        <td><%= showingseatallocation.width %></td>
+        <td><%= showingseatallocation.showing %></td>
+        <td><%= link_to 'Show', showingseatallocation %></td>
+        <td><%= link_to 'Edit', edit_showingseatallocation_path(showingseatallocation) %></td>
+        <td><%= link_to 'Destroy', showingseatallocation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Showingseatallocation', new_showingseatallocation_path %>

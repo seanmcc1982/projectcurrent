@@ -1,0 +1,37 @@
+<%= form_with(model: showingseatallocation, local: true) do |form| %>
+  <% if showingseatallocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(showingseatallocation.errors.count, "error") %> prohibited this showingseatallocation from being saved:</h2>
+
+      <ul>
+      <% showingseatallocation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :seatallocation %>
+    <%= form.text_area :seatallocation, id: :showingseatallocation_seatallocation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rows %>
+    <%= form.number_field :rows, id: :showingseatallocation_rows %>
+  </div>
+
+  <div class="field">
+    <%= form.label :width %>
+    <%= form.number_field :width, id: :showingseatallocation_width %>
+  </div>
+
+  <div class="field">
+    <%= form.label :showing_id %>
+    <%= form.text_field :showing_id, id: :showingseatallocation_showing_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

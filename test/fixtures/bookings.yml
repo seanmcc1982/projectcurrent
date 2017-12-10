@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bookingdate: 2017-12-10 16:12:42
+  status: MyString
+  user: one
+
+two:
+  bookingdate: 2017-12-10 16:12:42
+  status: MyString
+  user: two

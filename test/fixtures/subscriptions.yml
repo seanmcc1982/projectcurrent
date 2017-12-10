@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  subscribed: false
+  starttime: 2017-12-10 16:12:40
+  endtime: 2017-12-10 16:12:40
+  price: 9.99
+  user: one
+
+two:
+  subscribed: false
+  starttime: 2017-12-10 16:12:40
+  endtime: 2017-12-10 16:12:40
+  price: 9.99
+  user: two

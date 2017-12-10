@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  showing_id: 1
+  filmtitle: MyString
+  screenname: MyString
+  seat: MyText
+  price: 9.99
+  booking: one
+
+two:
+  showing_id: 1
+  filmtitle: MyString
+  screenname: MyString
+  seat: MyText
+  price: 9.99
+  booking: two
