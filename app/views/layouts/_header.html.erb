@@ -1,8 +1,9 @@
-<div id='header'>
-</div>
-<div id='menu'>
+<div id="header">
     
-    <div id='navbar'>
+    <!--<#%= image_tag("filmreel.png", :id => "filmreel_image")%>-->
+    
+    <nav>
+        
          <ul>
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Showtimes", showings_path %></li>
@@ -11,25 +12,19 @@
                 <li><%= link_to 'User Edit Profile', edit_user_registration_path %></li>
                 <li><%= link_to "User Log Out", destroy_user_session_path, :method => :delete %></li>
                 
+                
             <% elsif admin_signed_in? %>
-                <li><%= link_to "Admin Log Out", destroy_admin_session_path, :method => :delete %> %></li>
+                <li><%= link_to "Admin Log Out", destroy_admin_session_path, :method => :delete %></li>
             <% else %>
                 <li><%= link_to "Admin Register", new_admin_registration_path %></li>
                 <li><%= link_to "Admin Log in", new_admin_session_path %></li>
                 <li><%= link_to "User Register", new_user_registration_path %></li>
                 <li><%= link_to 'User Sign In', new_user_session_path %></li>
             <% end %>
-            <!--admin only -->
-            
-            <li><%= link_to 'Booking', bookings_path %></li>
-            <li><%= link_to 'Bookingshowing', bookingshowings_path %></li>
-            <li><%= link_to 'Film', films_path %></li>
-            <li><%= link_to 'Screen', screens_path %></li>
-                
-            
-         </ul>        
-    </div>
+        </ul>
+    </nav>
 </div>
+   
         
  
         

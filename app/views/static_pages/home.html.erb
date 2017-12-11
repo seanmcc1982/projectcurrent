@@ -1,2 +1,60 @@
 <% provide(:title, "Home") %>
-<h1>Home</h1>
+
+	<div>
+		<h2>Welcome to Cinemob</h2>
+		
+		<% if user_signed_in? %>
+		<h3>View <%= link_to 'Showtimes', showings_path %></h3>
+		
+		<% else %>
+		<h3>View <%= link_to 'Showtimes', showings_path %></h3>
+		<h3>Please <%= link_to 'Login', new_user_session_path %> or <%= link_to 'Register', new_user_registration_path %> to continue using the site</h3>
+		<% end %>
+
+        <% if user_signed_in? %>
+        <h4>Welcome back <%= current_user.email %></h4>
+        <p>You were last signed in at: <%= current_user.last_sign_in_at %></p>
+ 
+	        <% if @lastbooking.nil? %>
+	        <p>You have no booking history</p>
+	        <% else %>
+	        <p>Your last booking was:</p>
+	        <%= @lastbooking.bookingdate %> | <%= @lastbooking.status %> | <%= link_to 'Show', @lastbooking %>
+	       <% end %><br></p>
+	   <% end %>
+		<div class="filmcontainer">
+		   <div class= "filmimagecol4"><%= image_tag("the_godfather.jpg", alt: "The Godfather Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("et.jpg", alt: "E T Film Image", :class => "filmposter" )%></div>
+		   <div class="filmimagecol4"><%= image_tag("casablanca.jpg", alt: "Casablanca Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("terminator.jpg", alt: "The Terminator Film Image", :class => "filmposter")%></div>
+		</div>
+		<div class="filmcontainer">
+		   <div class="filmimagecol4"><%= image_tag("predator.jpg", alt: "Predator Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("home_alone.jpg", alt: "Home Alone Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("the_godfather.jpg", alt: "The Godfather Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("et.jpg", alt: "E T Film Image", :class => "filmposter")%></div>
+		</div>
+		<div class="filmcontainer">
+		   <div class="filmimagecol4"><%= image_tag("casablanca.jpg", alt: "Casablanca Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("terminator.jpg", alt: "The Terminator Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("predator.jpg", alt: "Predator Film Image", :class => "filmposter")%></div>
+		   <div class="filmimagecol4"><%= image_tag("home_alone.jpg", alt: "Home Alone Film Image", :class => "filmposter")%></div>
+		</div>
+	   
+
+		<p><em> Temp links:</em></p>
+		 <div>
+            <!--admin only -->
+            
+            <li><%= link_to 'Booking', bookings_path %></li>
+            <li><%= link_to 'Bookingshowing', bookingshowings_path %></li>
+            <li><%= link_to 'Film', films_path %></li>
+            <li><%= link_to 'Screen', screens_path %></li>
+            <li><%= link_to 'Cart', cart_path %></li>
+            <li><%= link_to 'showingseatallocations', showingseatallocations_path %></li>
+            
+
+    	</div>
+		
+	</div>
+			

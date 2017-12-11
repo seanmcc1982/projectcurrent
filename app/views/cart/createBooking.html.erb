@@ -1,0 +1,27 @@
+<% provide(:title, "Seat Reservation Completed") %>
+
+<h2>Thank You</h2>
+
+<p>You have just made a booking</p>
+
+Booking Reference <%= @bookings.id %>
+        
+<br><br>
+
+<h2>Showing(s)</h2>
+
+        <% @total = 0 %>
+        <% @bookingshowings.each do |id| %>
+
+            <% bookingshowing = Bookingshowing.find_by_id(id) %>
+            <% booking = Booking.find_by_id(bookingshowing.booking_id) %>
+            <% showing = Showing.find_by_id(bookingshowing.booking_id) %>
+         
+            <%= bookingshowing.booking_id %> | <%= booking.bookingdate %> | <%= booking.status %> | <%= bookingshowing.filmtitle %> | <%= bookingshowing.screenname %> | <%= bookingshowing.seat %> | <%= number_to_currency(bookingshowing.price, :unit=> "€" )%>
+            <% @total += bookingshowing.price %>
+            <br>
+        <% end %>
+        You will pay &euro; <%= @total %>
+        <br>
+           <a href="/paid">Submit Payment</a></td>
+    

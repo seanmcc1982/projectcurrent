@@ -9,12 +9,29 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </head>
-
-  <body>
-    <%= render 'layouts/header'%>
-    <%= yield %>
-    <%=render 'layouts/footer'%> 
-  </body>
   
- 
+
+<%= render 'layouts/header'%> 
+
+
+  
+  <div id="bodymain">
+    
+        <div id="logo">
+          
+          <%= image_tag("Cinemob_Logo", :id =>"image_logo")%>
+          
+        </div>
+    
+    
+    <div class="container">
+      <%= yield %>
+    <br>
+      <%= render 'layouts/search'%>
+    </div>
+    
+    <br>
+    <%=render 'layouts/footer'%> 
+    
+  </div> 
 </html>

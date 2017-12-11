@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :showingseatallocations
-  resources :showings
   resources :films
   resources :screens
+  
+  resources :showings
+  resources :showingseatallocations
+  
   resources :subscriptions
   resources :bookingshowings
   devise_for :admins
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
   
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clearCart'
-  get '/cart/:id' => 'cart#add'
+  get '/cart/:id/:seat' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
   get '/category/:title' => 'static_pages#category'
   

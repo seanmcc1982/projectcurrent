@@ -4,6 +4,7 @@ class ShowingsController < ApplicationController
   def search
     @search_term = params[:q]
     st = "%#{params[:q]}%"
+   # films = Film.where( '(title like ?) OR (filmcast like ?)', st ).select(:id).distinct
     films = Film.where('title LIKE :search OR filmcast LIKE :search OR plot LIKE :search', search: st).select(:id).distinct
     @showings = Showing.where("film_id IN (?)", films)
   end 
@@ -76,6 +77,6 @@ class ShowingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def showing_params
-      params.require(:showing).permit(:slot, :price, :screen_id, :film_id)
+      params.require(:showing).permit(:slot, :price, :screen_id, :film_id, :seatallocation)
     end
 end

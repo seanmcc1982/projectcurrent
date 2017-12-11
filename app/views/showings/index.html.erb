@@ -2,32 +2,51 @@
 
 <h1>Showings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Slot</th>
-      <th>Price</th>
-      <th>Screen</th>
-      <th>Film</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br><br>
+     Slot | Price | Screen | Film | Seatallocation
 
-  <tbody>
-    <% @showings.each do |showing| %>
-      <tr>
-        <td><%= showing.slot %></td>
-        <td><%= showing.price %></td>
-        <td><%= showing.screen %></td>
-        <td><%= showing.film %></td>
-        <td><%= link_to 'Show', showing %></td>
-        <td><%= link_to 'Edit', edit_showing_path(showing) %></td>
-        <td><%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<% @showings.each do |showing| %>
+  <% @thisscreen = Screen.where(id: showing.screen_id) %>
+  <% @thisfilm = Film.where(id: showing.film_id) %>
+    
+  <% @thisscreen.each do |screen| %>
+    <% @thisfilm.each do |film| %>
+        <br>
+        <%= showing.slot %> | <%= number_to_currency(showing.price, :unit => '€') %> | <%= screen.screenname %> | <%= film.title %> | 
+        <br>
+        <% seatarr = showing.seatallocation.split(' ') %>
+        <br>
+        <% i = 0 %>
+        <% index = 0 %>
+        <% while i < 5 do %>
+          <% j = 0 %>
+          <% while j < 5 do %>  
+              <a href="/cart/<%= showing.id %>/<%= seatarr[index] %>">seat</a>
+            <% j+=1 %> 
+            <% index+=1 %> 
+          <% end %><br>
+          <% i+=1 %> 
+        <% end %>
+
+        
+        <% if user_signed_in? %>
+            <a href="/cart/<%= showing.id %>">Add to Cart</a>
+        <% end %>
+        <% if user_signed_in? || admin_signed_in? %>
+          <%=  link_to 'Show', showing %>
+        <% end %>
+        <% if admin_signed_in? %>
+            <%= link_to 'Edit', edit_showing_path(showing) %>
+            <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <br>
     <% end %>
-  </tbody>
-</table>
+  <% end %>
+<% end %>
+    
+    
 
 <br>
-
-<%= link_to 'New Showing', new_showing_path %>
+<% if admin_signed_in? %>
+  <%= link_to 'New Showing', new_showing_path %>
+<% end %>

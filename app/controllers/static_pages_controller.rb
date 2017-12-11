@@ -1,14 +1,18 @@
 class StaticPagesController < ApplicationController
   def home
     @showings = Showing.all
+    @bookings = Booking.all
+    if user_signed_in?  
+      @lastbooking = Booking.where(user_id: current_user.id).last
+    end
+    
   end
 
   def orderConfirmed
   end
   
   def paid
-    # Here you could also cear the cart
-    
+   
     flash[:notice] = 'Transaction Complete'
 
     @booking = Booking.last

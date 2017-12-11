@@ -15,5 +15,20 @@
   <%= @booking.user %>
 </p>
 
-<%= link_to 'Edit', edit_booking_path(@booking) %> |
+
+<br><br>
+Showing | Filmtitle | Screenname | Seat | Price
+<br><br>
+
+      <%  @bookingshowings = Bookingshowing.where(booking_id: @booking.id) %>
+      <%  @bookingshowings.each do |bookingshowing| %>
+        <%= bookingshowing.showing_id %> | <%= bookingshowing.filmtitle %> |<%= bookingshowing.screenname %> | <%= bookingshowing.seat %> | <%= bookingshowing.price %>
+        <br>
+      <% end %>
+    <br><br>
+<% if admin_signed_in? %>
+  <%= link_to 'Edit', edit_booking_path(@booking) %> |
+<% end %> 
+
 <%= link_to 'Back', bookings_path %>
+

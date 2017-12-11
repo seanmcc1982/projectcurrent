@@ -1,37 +1,26 @@
+<% provide(:title, "Films") %>
 <p id="notice"><%= notice %></p>
 
 <h1>Films</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Filmcast</th>
-      <th>Plot</th>
-      <th>Poster url</th>
-      <th>Trailer url</th>
-      <th>Runtime</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<br><br>
 
-  <tbody>
+Title | Filmcast | Plot | Poster url | Trailer url | Runtime
+
+<br><br>
+
     <% @films.each do |film| %>
-      <tr>
-        <td><%= film.title %></td>
-        <td><%= film.filmcast %></td>
-        <td><%= film.plot %></td>
-        <td><%= film.poster_url %></td>
-        <td><%= film.trailer_url %></td>
-        <td><%= film.runtime %></td>
-        <td><%= link_to 'Show', film %></td>
-        <td><%= link_to 'Edit', edit_film_path(film) %></td>
-        <td><%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <%= film.title %> | <%= film.filmcast %> | <%= film.plot %> | <%= film.poster_url %> | <%= film.trailer_url %> | <%= film.runtime %>  
+        
+        <% if user_signed_in? || admin_signed_in? %>
+            <%= link_to 'Show', film %> |
+        <% end %>
+        <% if admin_signed_in? %>
+            <%= link_to 'Edit', edit_film_path(film) %> | <%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        <br>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Film', new_film_path %>
+<br><br>
+<% if admin_signed_in? %>
+    <%= link_to 'New Film', new_film_path %>
+<% end %>
