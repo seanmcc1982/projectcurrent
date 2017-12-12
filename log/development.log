@@ -17077,3 +17077,319 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:51:35 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (179.9ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 238ms (Views: 220.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:51:37 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 37.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:51:38 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:51:39 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 80.111.99.186 at 2017-12-12 09:51:41 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 66ms (Views: 53.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:51:42 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:56:20 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 09:56:51 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:01:03 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:01:28 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:01:44 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 76ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:01:58 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 83ms (Views: 82.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:04:45 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_search.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:07:09 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 99ms (Views: 98.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:08:09 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_search.html.erb (15.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 68ms (Views: 66.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:08:56 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:10:02 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 77ms (Views: 75.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:10:27 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:11:55 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 76ms (Views: 74.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 80.111.99.186 at 2017-12-12 10:11:59 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/showings" for 80.111.99.186 at 2017-12-12 10:12:10 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ShowingsController#index as HTML
+  Rendering showings/index.html.erb within layouts/application
+  [1m[36mShowing Load (0.2ms)[0m  [1m[34mSELECT "showings".* FROM "showings"[0m
+  [1m[36mScreen Load (0.1ms)[0m  [1m[34mSELECT "screens".* FROM "screens" WHERE "screens"."id" = ?[0m  [["id", 1]]
+  [1m[36mFilm Load (0.1ms)[0m  [1m[34mSELECT "films".* FROM "films" WHERE "films"."id" = ?[0m  [["id", 1]]
+  Rendered showings/index.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/cart/1/A01N" for 80.111.99.186 at 2017-12-12 10:12:13 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartController#add as HTML
+  Parameters: {"id"=>"1", "seat"=>"A01N"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 80.111.99.186 at 2017-12-12 10:12:13 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/sign_in" for 80.111.99.186 at 2017-12-12 10:12:19 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admins/sign_in" for 80.111.99.186 at 2017-12-12 10:12:28 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jfJ9zDqbLFW3jUqiUi0iyvJvWaxdKtDucBsku3F7VMGIvLQF8pqNZIhkRPoEXzMTA6RsjeDSXrKfKsC7eXlPig==", "admin"=>{"email"=>"admin@cinemob.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."email" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["email", "admin@cinemob.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "admins" SET "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "admins"."id" = ?[0m  [["current_sign_in_at", "2017-12-12 10:12:28.638839"], ["last_sign_in_at", "2017-12-11 20:30:45.475884"], ["current_sign_in_ip", "80.111.99.186"], ["sign_in_count", 6], ["updated_at", "2017-12-12 10:12:28.640209"], ["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://e0ed12b85689438b8340b05c8eae344c.vfs.cloud9.eu-west-1.amazonaws.com/
+Completed 302 Found in 176ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:12:28 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.0ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_search.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:13:58 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.5ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_search.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 80.111.99.186 at 2017-12-12 10:14:40 +0000
+Cannot render console from 80.111.99.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.9ms)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT  "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_search.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.2ms)
+
+

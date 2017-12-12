@@ -4,11 +4,11 @@
 		<h2>Welcome to Cinemob</h2>
 		
 		<% if user_signed_in? %>
-		<h3>View <%= link_to 'Showtimes', showings_path %></h3>
+		<h3><%= link_to "View Showtimes", showings_path, :class => "linkshowtimes" %></h3>
 		
 		<% else %>
-		<h3>View <%= link_to 'Showtimes', showings_path %></h3>
-		<h3>Please <%= link_to 'Login', new_user_session_path %> or <%= link_to 'Register', new_user_registration_path %> to continue using the site</h3>
+		<h3><%= link_to "View Showtimes", showings_path, :class => "linkshowtimes" %></h3>
+		<h3>Please <%= link_to "Login", new_user_session_path,  :class => "link"  %> or <%= link_to "Register", new_user_registration_path,  :class => "link"  %> to continue using the site</h3>
 		<% end %>
 
         <% if user_signed_in? %>

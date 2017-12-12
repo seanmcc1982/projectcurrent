@@ -1,7 +1,7 @@
 body{ /*main body styling*/
 	background-color:#ffffff;
 	font-family: Helvetica;
-	font-size:16px;	
+	font-size:14pt;	
 	/*overflow:auto;*/
 }  
 
@@ -55,6 +55,33 @@ p {
 	height: 200px;
 }
 
+.linkshowtimes{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18pt;
+	background-color: #000000;
+	color: #ffffff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 3px;
+}
+
+.link{  /*red links*/
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #c0091d;
+	color: #ffffff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 3px;
+	
+	
+}
+
 /* -------------Header Styling ----------------*/
 
 
@@ -94,7 +121,7 @@ nav ul li a{
 	text-decoration:none;
 	text-align:center;											
 }
-nav ul li a:hover,nav ul li.active a{
+nav ul li a:hover{
 	background-color:#ffffff;
 	color:#c0091d;
 }
