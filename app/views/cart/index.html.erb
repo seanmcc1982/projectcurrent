@@ -15,19 +15,29 @@
 Slot | Price | Screen | Film | Seat | Action | Total
     <br>
     
-    <% @cart.each do |id| %>
-        <% showing = Showing.find_by_id(id) %>
+    <% @cart.each do |id, showing_seat| %>
+        
+      <%   showingseatarr = showing_seat.split('_')  %>
+      <%   showingid = showingseatarr[0] %>
+      <%   seatingid = showingseatarr[1] %>
+        
+        <% showing = Showing.find_by_id(showingid) %>
         <% screen = Screen.find_by_id(showing.screen_id) %>
+     
         <% film = Film.find_by_id(showing.film_id) %>
-            <%= showing.slot %> | <%= number_to_currency(showing.price) %> | <%= screen.screenname %> | <%= film.title %> | <%= screen.seating %> | <a href="/cart/remove/<%= showing.id %>">Remove from Cart</a>
-            <br>
-            <% total += showing.price%>
-        <!--<#% end %> -->
+        <%= showing.slot %> | <%= number_to_currency(showing.price) %> |
+        <%= screen.screenname %> | <%= film.title %> | <%= seatingid[0,3] %> |
+        <a href="/cart/remove/<%= showing.id %>/<%= seatingid %>">Remove from Cart</a> |
+        
+        <% total += showing.price%>
         <br>
-        Total: <%= number_to_currency(total, :unit => "Eur")%>
-        <br><br>
+        <% id.to_s + " " + showing_seat + " " + @cart.size.to_s %><br>
     <% end %>
-    
+    Total: <%= number_to_currency(total, :unit => "Eur")%>
+
+    <br>
+    <br>
+    <br>
 <% if user_signed_in? %>
     <%= link_to 'Checkout Order', :controller => "cart", :action => "createBooking" %> 
     <%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %>

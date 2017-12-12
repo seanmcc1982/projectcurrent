@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/cart/clear' => 'cart#clearCart'
   get '/cart/:id/:seat' => 'cart#add'
   get '/cart/remove/:id' => 'cart#remove'
+  get '/cart/remove/:id/:seat' => 'cart#removeseat'
   get '/category/:title' => 'static_pages#category'
   
   root 'static_pages#home'
