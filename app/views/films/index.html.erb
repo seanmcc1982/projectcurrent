@@ -3,24 +3,44 @@
 
 <h1>Films</h1>
 
-<br><br>
-
-Title | Filmcast | Plot | Poster url | Trailer url | Runtime
-
-<br><br>
-
+<br>
     <% @films.each do |film| %>
-        <%= film.title %> | <%= film.filmcast %> | <%= film.plot %> | <%= film.poster_url %> | <%= film.trailer_url %> | <%= film.runtime %>  
+    <div class="filmdetails">
+        <h3><%= film.title %></h3>
+        <p> <b>Staring: </b><%= film.filmcast %></p>
+        <p> <b>Synopsis: </b><%= film.plot %></p>
+        <p> <b>Film poster: </b> <%= film.poster_url %></p>
+        <p> <b>View Trailer: </b> <%= link_to  (film.trailer_url), film.trailer_url %> </p>
         
+    
+        <p> <b>Runtime: </b> <%= film.runtime %> minutes </p>
         <% if user_signed_in? || admin_signed_in? %>
-            <%= link_to 'Show', film %> |
+            <%= link_to 'Show', film, :class => "link" %> |
         <% end %>
         <% if admin_signed_in? %>
-            <%= link_to 'Edit', edit_film_path(film) %> | <%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Edit', edit_film_path(film), :class => "link" %> | <%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %>
         <% end %>
-        <br>
+        <br><br>
+        <% if admin_signed_in? %>
+            <%= link_to 'New Film', new_film_path, :class => "linkblack" %>
+        <% end %>
+    </div>
+    <br>
     <% end %>
+        
+        <!--
+        
+        <#%= film.title %> | <#%= film.filmcast %> | <#%= film.plot %> | <#%= film.poster_url %> | <#%= film.trailer_url %> | <#%= film.runtime %>  
+        
+        <#% if user_signed_in? || admin_signed_in? %>
+            <#%= link_to 'Show', film %> |
+        <#% end %>
+        <#% if admin_signed_in? %>
+            <#%= link_to 'Edit', edit_film_path(film) %> | <#%= link_to 'Destroy', film, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <#% end %>
+        <br>
+    <#% end %>
 <br><br>
-<% if admin_signed_in? %>
-    <%= link_to 'New Film', new_film_path %>
-<% end %>
+<#% if admin_signed_in? %>
+    <#%= link_to 'New Film', new_film_path %>
+<#% end %>

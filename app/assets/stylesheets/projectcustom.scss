@@ -1,7 +1,7 @@
 body{ /*main body styling*/
 	background-color:#ffffff;
 	font-family: Helvetica;
-	font-size:16px;	
+	font-size:14pt;	
 	/*overflow:auto;*/
 }  
 
@@ -45,14 +45,60 @@ p {
 	padding-bottom: 5px;
 }
 
-.filmimagecol4{
+.filmimagecol5{
 	margin: 0 auto;
-	width: 25%;
+	width: 20%;
 	float: left;
 }
 
 .filmposter{
 	height: 200px;
+}
+
+.linkblack{ /*black links*/
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 18pt;
+	background-color: #000000;
+	color: #ffffff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 3px;
+}
+
+.link{  /*red links*/
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #c0091d;
+	color: #ffffff;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 3px;
+	
+	
+}
+
+.filmdetails{
+	width: 65%;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000000;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	text-align: left;
+	margin: 0 auto;
+	word-wrap: break-word;
+	
+	
+}
+/*
+p.filmdetails{
+	text-align: left;
 }
 
 /* -------------Header Styling ----------------*/
@@ -94,9 +140,18 @@ nav ul li a{
 	text-decoration:none;
 	text-align:center;											
 }
-nav ul li a:hover,nav ul li.active a{
+nav ul li a:hover{
 	background-color:#ffffff;
 	color:#c0091d;
+}
+
+@media screen and(max-width:950px){
+	.filmimagecol5{
+	margin: 0 auto;
+	width: 33.33333333%;
+	float: left;
+}
+
 }
 
 @media screen and(max-width:875px){
@@ -109,13 +164,6 @@ nav ul li a:hover,nav ul li.active a{
 
 @media screen and (max-width:750px){
 	
-.filmimagecol4{
-	margin: 0 auto;
-	width: 50%;
-	float: left;
-}
-
-
 nav{
 	width:100%;
 	margin-bottom:10px;
@@ -167,11 +215,19 @@ nav ul li a{
 	font-family:helvetica;
 	padding: 10px;
 }
-	
 
-@media screen and (max-width:300px){
+@media screen and (max-width:600px){
+	.filmimagecol5{
+	margin: 0 auto;
+	width: 50%;
+	float: left;
+}
+
+}	
+
+@media screen and (max-width:400px){
 	
-.filmimagecol4{
+.filmimagecol5{
 	margin: 0 auto;
 	width: 100%;
 	float: left;
