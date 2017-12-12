@@ -15,13 +15,22 @@
         <%= showing.slot %> | <%= number_to_currency(showing.price, :unit => '€') %> | <%= screen.screenname %> | <%= film.title %> | 
         <br>
         <% seatarr = showing.seatallocation.split(' ') %>
+        <% rows = screen.rows.to_i  %>
+        <% width = screen.width.to_i  %>
+       
         <br>
         <% i = 0 %>
         <% index = 0 %>
-        <% while i < 5 do %>
+        <% while i < rows do %>
           <% j = 0 %>
-          <% while j < 5 do %>  
-              <a href="/cart/<%= showing.id %>/<%= seatarr[index] %>">seat</a>
+          <% while j < width do %>  
+              <% if seatarr[index][3,4] == 'N' %>
+                <a href="/cart/<%= showing.id %>/<%= seatarr[index] %>">seat</a>
+              <% elsif seatarr[index][3,4] == 'R' %>
+                 rsrv <% seatarr[index]  %>
+              <% else %>
+                 gone <% seatarr[index] %>
+              <% end %>
             <% j+=1 %> 
             <% index+=1 %> 
           <% end %><br>

@@ -23,10 +23,35 @@ class CartController < ApplicationController
     
     cart[lastindex + 1] = seat_to_check
 
+    # now update db to reflect seat being reserved by this session:
+    
+    @showing = Showing.find_by_id(id)
+    replacementshowing = @showing.seatallocation.gsub(seat, seat[0,3]+"R")
+    
+    @showing.update_attributes(:seatallocation => replacementshowing)
+    @showing.save
+    
     redirect_to :action => :index
   end
 
   def clearCart
+    
+    if !session[:cart] then
+      session[:cart] = {}
+    end
+    cart = session[:cart]
+     
+    cart.each do |i, showing_seat|
+      showingseatarr = showing_seat.split('_')
+      showingid = showingseatarr[0]
+      seatingid = showingseatarr[1]  
+      @showing = Showing.find_by_id(showingid)
+      
+      replacementshowing = @showing.seatallocation.gsub(seatingid, seatingid[0,3]+"N")
+      @showing.update_attributes(:seatallocation => replacementshowing)
+      @showing.save
+    end
+
     #sets session variable to nil and bring back to index
     session[:cart] = nil
     redirect_to :action => :index
@@ -41,13 +66,7 @@ class CartController < ApplicationController
     end  
   end
   
-  def remove
-    id = params[:id]
-    cart = session[:cart]
-    cart.delete id
-    redirect_to :action => :index
-  end
-  
+
   def removeseat
     id = params[:id]
     seat = params[:seat]
