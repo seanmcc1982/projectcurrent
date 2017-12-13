@@ -6,6 +6,8 @@ class StaticPagesController < ApplicationController
       @lastbooking = Booking.where(user_id: current_user.id).last
     end
     
+    @films = Film.all
+    
   end
 
   def orderConfirmed

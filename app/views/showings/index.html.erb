@@ -1,61 +1,71 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Showtimes") %>
 
-<h1>Showings</h1>
+<h1>Showtimes</h1>
 
-<br><br>
-     Slot | Price | Screen | Film | Seatallocation
+<div class="showtimes">
+    <%= image_tag "seatavailable.png", :class => "seaticonkey" %> Seat Available <br> <%= image_tag "seatreserved.png", :class => "seaticonkey" %> Seat Reserved <br> <%= image_tag "seatgone.png", :class => "seaticonkey" %> Seat Unavailable
+</div>
 
-<% @showings.each do |showing| %>
-  <% @thisscreen = Screen.where(id: showing.screen_id) %>
-  <% @thisfilm = Film.where(id: showing.film_id) %>
-    
-  <% @thisscreen.each do |screen| %>
-    <% @thisfilm.each do |film| %>
-        <br>
-        <%= showing.slot %> | <%= number_to_currency(showing.price, :unit => '€') %> | <%= screen.screenname %> | <%= film.title %> | 
-        <br>
-        <% seatarr = showing.seatallocation.split(' ') %>
-        <% rows = screen.rows.to_i  %>
-        <% width = screen.width.to_i  %>
+    <% @showings.each do |showing| %>
+<div class="showtimes">
+  <div class = "showtimesleft">
+      <% @thisscreen = Screen.where(id: showing.screen_id) %>
+      <% @thisfilm = Film.where(id: showing.film_id) %>
+        
+      <% @thisscreen.each do |screen| %>
+        <% @thisfilm.each do |film| %>
+            <p><b>Film: </b><%= film.title %><br><b>Showtime: </b><%= showing.slot %><br><b>Price: </b><%= number_to_currency(showing.price, :unit => '€') %><br><b>Screen: </b> <%= screen.screenname %></p>
+     </div>   
+  <div class = "showtimesright">
+    <% seatarr = showing.seatallocation.split(' ') %>
+    <% rows = screen.rows.to_i  %>
+    <% width = screen.width.to_i  %>
        
-        <br>
-        <% i = 0 %>
+  <br>
+    <div class="screencontainer">
+      <%= image_tag "screendirection.png", :class => "seaticon" %>
+    </div>
+        
+      <% i = 0 %>
         <% index = 0 %>
         <% while i < rows do %>
           <% j = 0 %>
           <% while j < width do %>  
               <% if seatarr[index][3,4] == 'N' %>
-                <a href="/cart/<%= showing.id %>/<%= seatarr[index] %>">seat</a>
+                <a href="/cart/<%= showing.id %>/<%= seatarr[index] %>"><%= image_tag "seatavailable.png", :class => "seaticon" %></a> <!-- image type available -->
+                
+                
+                
+                
               <% elsif seatarr[index][3,4] == 'R' %>
-                 rsrv <% seatarr[index]  %>
+                 <%= image_tag "seatreserved.png", :class => "seaticon" %>  <!-- image type reserved -->
               <% else %>
-                 gone <% seatarr[index] %>
+                 <%= image_tag "seatgone.png", :class => "seaticon" %><!-- image type gone -->
               <% end %>
             <% j+=1 %> 
             <% index+=1 %> 
           <% end %><br>
           <% i+=1 %> 
         <% end %>
-
         
-        <% if user_signed_in? %>
-            <a href="/cart/<%= showing.id %>">Add to Cart</a>
-        <% end %>
-        <% if user_signed_in? || admin_signed_in? %>
-          <%=  link_to 'Show', showing %>
-        <% end %>
+        <br>
+
+      
+
         <% if admin_signed_in? %>
-            <%= link_to 'Edit', edit_showing_path(showing) %>
-            <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Show', showing, :class => "link" %>
+            <%= link_to 'Edit', edit_showing_path(showing), :class => "link" %>
+            <%= link_to 'Destroy', showing, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %>
         <% end %>
         <br>
+      <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>  
 <% end %>
-    
     
 
 <br>
 <% if admin_signed_in? %>
-  <%= link_to 'New Showing', new_showing_path %>
+  <%= link_to 'New Showing', new_showing_path, :class => "linkblack" %>
 <% end %>

@@ -14,15 +14,15 @@ Seatallocation | Rows | Width | Showing
       <%= showingseatallocation.seatallocation %> | <%= showingseatallocation.rows %> | <%= showingseatallocation.width %> | <%= showingseatallocation.showing %> 
       
       <% if user_signed_in? || admin_signed_in? %>
-        <%= link_to 'Show', showingseatallocation %>
+        <%= link_to 'Show', showingseatallocation, :class => "link"  %>
       <% end %>
       <% if admin_signed_in? %>
-       <%= link_to 'Edit', edit_showingseatallocation_path(showingseatallocation) %> | <%= link_to 'Destroy', showingseatallocation, method: :delete, data: { confirm: 'Are you sure?' } %>
+       <%= link_to 'Edit', edit_showingseatallocation_path(showingseatallocation), :class => "link" %> | <%= link_to 'Destroy', showingseatallocation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %>
       <% end %>
       <br>
     <% end %>
   
 <br>
 <% if admin_signed_in? %>
-  <%= link_to 'New Showingseatallocation', new_showingseatallocation_path %>
+  <%= link_to 'New Showingseatallocation', new_showingseatallocation_path, :class => "linkblack" %>
 <% end %>

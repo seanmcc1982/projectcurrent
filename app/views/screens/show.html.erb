@@ -16,9 +16,9 @@
 </p>
 
 <p>
-  <strong>Seating:</strong>
-  <%= @screen.seating %>
+  <strong>Seating capacity:</strong>
+  <%= @screen.rows * @screen.width %>
 </p>
 
-<%= link_to 'Edit', edit_screen_path(@screen) %> |
-<%= link_to 'Back', screens_path %>
+<%= link_to 'Edit', edit_screen_path(@screen), :class => "link" %> |
+<%= link_to 'Back', screens_path, :class => "link"  %>

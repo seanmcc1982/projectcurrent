@@ -1,7 +1,24 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= resource_name.to_s.humanize %> Profile </h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
+  
+  <h3>All Booking History</h3>
+  
+      <% @bookings= Booking.all %>
+      <% @lastbooking = Booking.where(user_id: current_user.id).last %>
+
+      <% if @lastbooking.nil? %>
+	        <p>You have no booking history</p>
+	    <% else %>
+  
+        <% @bookings.where(user_id: current_user.id).each do |booking| %>
+          <b>Booking Date: </b><%= booking.bookingdate %> | <b>Status: </b><%= booking.status %> | <%= link_to 'Show', booking, :class => "link" %> 
+          <br>
+        <% end %>
+      <% end %>
+
+  <h3>Update Password</h3>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -40,4 +57,4 @@
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, :class => "link" %>

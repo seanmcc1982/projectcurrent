@@ -3,14 +3,8 @@
 	<div>
 		<h2>Welcome to Cinemob</h2>
 		
-		<% if user_signed_in? %>
-		<h3><%= link_to "View Showtimes", showings_path, :class => "linkblack" %></h3>
+		<h3><%= link_to "View Showtimes", showings_path, :class => "link" %></h3>
 		
-		<% else %>
-		<h3><%= link_to "View Showtimes", showings_path, :class => "linkblack" %></h3>
-		<h3>Please <%= link_to "Login", new_user_session_path,  :class => "link"  %> or <%= link_to "Register", new_user_registration_path,  :class => "link"  %> to continue using the site</h3>
-		<% end %>
-
         <% if user_signed_in? %>
         <h4>Welcome back <%= current_user.email %></h4>
         <p>You were last signed in at: <%= current_user.last_sign_in_at %></p>
@@ -19,42 +13,28 @@
 	        <p>You have no booking history</p>
 	        <% else %>
 	        <p>Your last booking was:</p>
-	        <%= @lastbooking.bookingdate %> | <%= @lastbooking.status %> | <%= link_to 'Show', @lastbooking %>
+	        <%= @lastbooking.bookingdate %> | <%= @lastbooking.status %> | <%= link_to 'Show', @lastbooking, :class => "link" %>
 	       <% end %><br></p>
-	   <% end %>
-	   <br>
+		<% end %>
+	  	
+	  	
+	  	
+	   
 		<div class="filmcontainer">
-		   	<div class= "filmimagecol5"><%= image_tag("the_godfather.jpg", alt: "The Godfather Film Poster", :class => "filmposter")%></div>
-		    <div class="filmimagecol5"><%= image_tag("et.jpg", alt: "E T Film Poster", :class => "filmposter" )%></div>
-		    <div class="filmimagecol5"><%= image_tag("casablanca.jpg", alt: "Casablanca Film Poster", :class => "filmposter")%></div>
-		    <div class="filmimagecol5"><%= image_tag("terminator.jpg", alt: "The Terminator Film Poster", :class => "filmposter")%></div>
-		    <div class="filmimagecol5"><%= image_tag("beauty_and_the_beast.jpg", alt: "Beauty and the Beast Film Poster", :class => "filmposter")%></div>
-		    
+			<% if @films.nil? %>
+				<p> There are no films showing</p>
+			<% else %>
+				<% @films.each do |film| %>
+			   	<div class= "filmimagecol5"><%= link_to (image_tag film.poster_url, :class => "filmposter"), film %></div>
+				 <% end %>
+			<% end %>	 
 		</div>
-		<br>
-		<div class="filmcontainer">
-		   <div class="filmimagecol5"><%= image_tag("home_alone.jpg", alt: "Home Alone Film Poster", :class => "filmposter")%></div>
-		   <div class="filmimagecol5"><%= image_tag("pulp_fiction.jpg", alt: "Pulp Fiction Film Poster", :class => "filmposter")%></div>
-		   <div class="filmimagecol5"><%= image_tag("the_departed.jpg", alt: "The Departed Film Poster", :class => "filmposter")%></div>
-		   <div class="filmimagecol5"><%= image_tag("singin_in_the_rain.jpg", alt: "Singin in the Rain Film Poster", :class => "filmposter")%></div>
-		   <div class="filmimagecol5"><%= image_tag("predator.jpg", alt: "Predator Film Poster", :class => "filmposter")%></div>
-		</div>
-		<br>
-		<br><br>
-
-		<p><em> Temp links:</em></p>
-		 <div>
-            <!--admin only -->
-            
-            <li><%= link_to 'Booking', bookings_path %></li>
-            <li><%= link_to 'Bookingshowing', bookingshowings_path %></li>
-            <li><%= link_to 'Film', films_path %></li>
-            <li><%= link_to 'Screen', screens_path %></li>
-            <li><%= link_to 'Cart', cart_path %></li>
-            <li><%= link_to 'showingseatallocations', showingseatallocations_path %></li>
-            
-
-    	</div>
+		
+		<% if !user_signed_in? %>
+		<h4>Please <%= link_to "Login", new_user_session_path, :class => "link"  %> or <%= link_to "Register", new_user_registration_path, :class => "link"  %> to continue using the site</h4>
+		<% end %>
+		
+		<%= render 'layouts/search'%>
 		
 	</div>
 			

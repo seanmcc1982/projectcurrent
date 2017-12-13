@@ -3,24 +3,46 @@
     <!--<#%= image_tag("filmreel.png", :id => "filmreel_image")%>-->
     
     <nav>
-        
+    <%  if session[:cart] then %>
+    <%   @cart = session[:cart] %>
+    <%  else %>
+    <%   @cart = {} %>
+    <%  end  %>
+    
+        <% cartcount = 0 %>
+        <% total =0 %>
+        <% if !@cart.empty? %>
+            <% @cart.each do |id, showing_seat| %>
+                <% cartcount += 1%>
+                <% showingseatarr = showing_seat.split('_')  %>
+                <% showingid = showingseatarr[0] %>
+                <% showing = Showing.find_by_id(showingid) %>
+                <% total += showing.price%>
+            <% end %>
+        <% end %>
          <ul>
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "Showtimes", showings_path %></li>
-
+            <li><%= link_to 'Films', films_path %></li>
+            
             <% if user_signed_in? %>
-                <li><%= link_to "User Edit Profile", edit_user_registration_path %></li>
+                <li><%= link_to "User Profile", edit_user_registration_path %></li>
+                <li><%= link_to 'Cart '+' ('+cartcount.to_s+') '+ number_to_currency(total, :unit => "€"), cart_path %></li>
                 <li><%= link_to "User Log Out", destroy_user_session_path, :method => :delete %></li>
-                
-                
+             
+
             <% elsif admin_signed_in? %>
+                
+                <li><%= link_to 'Screen', screens_path %></li>
+                <li><%= link_to 'Booking', bookings_path %></li>
                 <li><%= link_to "Admin Log Out", destroy_admin_session_path, :method => :delete %></li>
             <% else %>
-                <li><%= link_to "Admin Register", new_admin_registration_path %></li>
                 <li><%= link_to "Admin Log in", new_admin_session_path %></li>
                 <li><%= link_to "User Register", new_user_registration_path %></li>
                 <li><%= link_to 'User Sign In', new_user_session_path %></li>
+
             <% end %>
+            
         </ul>
     </nav>
 </div>

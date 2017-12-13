@@ -9,35 +9,48 @@
 
 <% total = 0 %>
 
-<br>
-<br>
+<table>
+  <thead>
+    <tr>
+      <th>Slot</th>
+      <th>Screen</th>
+      <th>Film</th>
+      <th>Seat</th>
+      <th>Action</th>
+      <th>Price</th>
+    </tr>
+  </thead>
 
-Slot | Price | Screen | Film | Seat | Action | Total
-    <br>
-    
     <% @cart.each do |id, showing_seat| %>
-        
-      <%   showingseatarr = showing_seat.split('_')  %>
-      <%   showingid = showingseatarr[0] %>
-      <%   seatingid = showingseatarr[1] %>
-        
+      <tr>
+        <% showingseatarr = showing_seat.split('_')  %>
+        <% showingid = showingseatarr[0] %>
+        <% seatingid = showingseatarr[1] %>
         <% showing = Showing.find_by_id(showingid) %>
         <% screen = Screen.find_by_id(showing.screen_id) %>
-     
         <% film = Film.find_by_id(showing.film_id) %>
-        <%= showing.slot %> | <%= number_to_currency(showing.price) %> |
-        <%= screen.screenname %> | <%= film.title %> | <%= seatingid[0,3] %> |
-        <a href="/cart/remove/<%= showing.id %>/<%= seatingid %>">Remove from Cart</a> |
         
-        <% total += showing.price%>
-        <br>
-        <% id.to_s + " " + showing_seat + " " + @cart.size.to_s %><br>
+        <td><%= showing.slot %> </td> 
+        <td><%= screen.screenname %> </td> 
+        <td><%= film.title %> </td> 
+        <td> <%= seatingid[0,3] %> </td> 
+        <td><a href="/cart/remove/<%= showing.id %>/<%= seatingid %>">Remove from Cart</a> </td>
+        <td><%= number_to_currency(showing.price, :unit => "€") %> </td>
+        <% total += showing.price %>
+      </tr>
     <% end %>
-    Total: <%= number_to_currency(total, :unit => "Eur")%>
 
-    <br>
-    <br>
-    <br>
+  <tr>
+    <td colspan=4></td>
+    <td><b>Total: </b></td>
+    <td><%= number_to_currency(total, :unit => "€")%></td>
+    
+  </tr>  
+
+</table>
+
+<br>
+
 <% if user_signed_in? %>
     <%= link_to 'Checkout Order', :controller => "cart", :action => "createBooking" %> 
     <%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %>

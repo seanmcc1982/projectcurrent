@@ -6,14 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    
+    <% unless notice.nil? %>
+      <div class="notice"><%= notice %></div>
+    <% end %>
+    
+    <% unless alert.nil? %>
+      <div class="alert"><%= alert %></div>
+    <% end %>
+
   </head>
   
-
-<%= render 'layouts/header'%> 
-
-
+  <%= render 'layouts/header'%> 
   
   <div id="bodymain">
     
@@ -26,12 +30,9 @@
     
     <div class="container">
       <%= yield %>
-    <br>
-      <%= render 'layouts/search'%>
+
     </div>
-    
-    <br>
-    <%=render 'layouts/footer'%> 
-    
+
   </div> 
+  <%= render 'layouts/footer'%> 
 </html>

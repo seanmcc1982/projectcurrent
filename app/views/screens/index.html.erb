@@ -1,26 +1,35 @@
 <% provide(:title, "Screens") %>
-<p id="notice"><%= notice %></p>
+
 
 <h1>Screens</h1>
 
-<br><br>
-Screenname | Rows | Width | Seating
+<table>
+  <thead>
+    <tr>
+      <th>Screenname</th>
+      <th>Rows</th>
+      <th>Width</th>
+      <th>Seating Capacity</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @screens.each do |screen| %>
+      <tr>
+        <td><%= screen.screenname %></td>
+        <td><%= screen.rows %></td>
+        <td><%= screen.width %></td>
+        <td><%= screen.rows * screen.width %></td> 
+        <td><%= link_to 'Show', screen, :class => "link" %></td>
+        <td><%= link_to 'Edit', edit_screen_path(screen), :class => "link" %></td>
+        <td><%= link_to 'Destroy', screen, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
 <br>
 
-    <% @screens.each do |screen| %>
-      <%= screen.screenname %> | <%= screen.rows %> | <%= screen.width %> | <%= screen.seating %> 
-      
-      <% if user_signed_in? || admin_signed_in? %>
-        <%= link_to 'Show', screen %> |
-      <% end %>
-      <% if admin_signed_in? %>
-        <%= link_to 'Edit', edit_screen_path(screen) %> | <%= link_to 'Destroy', screen, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-      <br>
-    <% end %>
-  
-<br><br>
-
 <% if admin_signed_in? %>
-  <%= link_to 'New Screen', new_screen_path %>
+  <%= link_to 'New Screen', new_screen_path, :class => "linkblack" %>
 <% end %>

@@ -1,22 +1,31 @@
 body{ /*main body styling*/
-	background-color:#ffffff;
+	background-color:#000000;
 	font-family: Helvetica;
 	font-size:14pt;	
-	/*overflow:auto;*/
+
 }  
 
-h1,h2,h3,h4,h5,h6 { /*main heading styling*/
+h1,h2,h3,h4,h5,h6 { 
 	text-align:center;
 
 
 }																							
 
-p {																								
+.center{
+	text-align:center;
     
 }
 
 
-#bodymain{
+.seaticon{ /*seat icon size*/
+	height: 40px;
+}
+
+.seaticonkey{ /*seat size for seat key*/
+	height: 20px;
+}
+
+#bodymain{ /*background image*/
 	background-image:url("/assets/Cinemascreen.jpg");
 	background-position:center;
 	background-size:cover;
@@ -27,37 +36,60 @@ p {
 																		
 }
 
-#logo{
+#logo{ /*logo div*/
 	margin: 0 auto;
 	text-align: center;
 }
 
-#image_logo{
+#image_logo{ /* logo image styling*/
 	width: 90%;
 	max-width:1000px;
 }
 
 
-.filmcontainer{
+.filmcontainer{ /*film contain div*/
 	width: 100%;
 	margin: 0 auto;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	display: inline-block;
 }
 
-.filmimagecol5{
+.filmimagecol5{ /*film image div on home page */
 	margin: 0 auto;
 	width: 20%;
 	float: left;
 }
 
-.filmposter{
-	height: 200px;
+.filmposter{ /*film poster height*/
+	height: 250px;
+}
+
+.showtimes{ /*showtimes div styling*/
+	width: 100%;
+	max-width: 750px;
+	margin: 0 auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: inline-block;
+
+}
+
+.showtimesleft{ /*showtimes left div*/
+	width: 50%;
+	margin: 0 auto;
+	float: left;
+	text-align: left;
+}
+
+.showtimesright{ /*showtimes right div*/
+	width: 50%;
+	margin: 0 auto;
+	float: right;
 }
 
 .linkblack{ /*black links*/
 	text-decoration: none;
-	font-weight: bold;
 	font-size: 18pt;
 	background-color: #000000;
 	color: #ffffff;
@@ -70,7 +102,6 @@ p {
 
 .link{  /*red links*/
 	text-decoration: none;
-	font-weight: bold;
 	background-color: #c0091d;
 	color: #ffffff;
 	padding-top: 3px;
@@ -82,7 +113,7 @@ p {
 	
 }
 
-.filmdetails{
+.filmdetails{ /*film details div*/
 	width: 65%;
 	border-style: solid;
 	border-width: 2px;
@@ -96,13 +127,64 @@ p {
 	
 	
 }
-/*
-p.filmdetails{
-	text-align: left;
+
+
+
+table, th, td { /*table styling*/
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px;
+    margin: 0 auto;
+    
+
+}
+
+:root { 
+    background-color: #000000;
+}
+
+.container{ /*main container in application */
+	margin: 0 auto;
+	width: 1000 px;
+	max-width: 75%;
+	min-height:75%;
+	border-radius: 25px;
+	padding: 2%;
+	background-color:#ffffff;
+	text-align:center;
+}
+
+#footer{ /*footer div*/
+	margin: 0 auto;
+	width:100%;
+	height:40px;
+	background-color:#000000;
+}
+
+#footertext{ /*footer content*/
+	color: #ffffff;
+	font-size:12px;
+	font-family:helvetica;
+	padding: 11px;
+	text-align: center;
+}
+
+#padlock_image{ /*padlock image in footer for admin login*/
+	height: 25px;
 }
 
 /* -------------Header Styling ----------------*/
 
+.notice {
+  color: white;
+  background-color: #000000;
+}
+
+.alert {
+  color: red;
+  background-color: #000000;
+}  
+  
 
 #header {
 	margin: 0 auto;
@@ -113,7 +195,6 @@ p.filmdetails{
 
 nav ul{
 	list-style:none;
-	/*display: block; */
 	margin: 0 auto;
 	padding-left:2%;
 	padding-right:2%;
@@ -122,15 +203,12 @@ nav ul{
 nav ul li{ 
 	float:left;
 	margin:0 auto;
-	/*border:1px solid #ffffff;
-	/*border-radius: 25px;*/
-	width:16%;
+	width:16.6666666%;
 	display: inline;
 }																							
 
 nav ul li a{
 	background:#c0091d;
-	/*border-radius: 25px;*/
 	display:block;
 	padding:5%;
 	font-weight:bold;
@@ -145,91 +223,135 @@ nav ul li a:hover{
 	color:#c0091d;
 }
 
-@media screen and(max-width:950px){
-	.filmimagecol5{
-	margin: 0 auto;
-	width: 33.33333333%;
-	float: left;
+
+/*-----Responsive Design Media Queries -------*/
+
+@media screen and(max-with:1300px){
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 20%;
+		float: left;
+	}
+	
+	.filmposter{ /*film poster height */
+		height: 185px;
+	}
 }
+
+@media screen and(max-with:1200px){
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 20%;
+		float: left;
+	}
+	
+	.filmposter{ /*film poster height */
+		height: 175px;
+	}
+}
+
+@media screen and(max-width:1100px){
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 20%;
+		float: left;
+	}
+	
+	.filmposter{ /*film poster height*/
+		height: 180px;
+	}
+
+}
+
+
+@media screen and(max-width:950px){
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 50%;
+		float: left;
+	}
+	
+	.filmposter{ /*film poster height*/
+		height: 200px;
+	}
+	
+	table { /*table font size*/
+	    font-size: 12px;
+	}
+
 
 }
 
 @media screen and(max-width:875px){
-	nav ul li a{
-	padding:4px 0;
-	font-size:12px;
+	
+	nav ul li a{ /*navigation link*/
+		font-size:12px;
 	}
 }
 
 
 @media screen and (max-width:750px){
+	/*---navigation bar styling----*/
+	nav{
+		width:100%;
 	
-nav{
-	width:100%;
-	margin-bottom:10px;
-}
+	}
 
-nav ul{ 
-	list-style:none;
-	margin:0 auto;
-	padding-left:0;
-}
+	nav ul{ 
+		list-style:none;
+		margin:0 auto;
+		padding: 0;
+	}
+	
+	nav ul li{
+		text-align:center;
+		margin:0 auto;
+		width:100%;
+		border-top:1px solid #ffffff;
+		border-right:1px solid #ffffff;
+		border-bottom:1px solid #ffffff;
+		border-left:1px solid #ffffff;
+	}
+	
+	nav ul li a{
+		padding:8px;
+		font-size:14px;
+	}
+	
+	.seaticon{ /*seat icon size*/
+		height: 30px;
+	}
 
-nav ul li{
-	text-align:center;
-	margin:0 auto;
-	width:100%;
-	border-top:1px solid #ffffff;
-	border-right:1px solid #ffffff;
-	border-bottom:1px solid #ffffff;
-	border-left:1px solid #ffffff;
-}
-nav ul li a{
-	padding:8px 0;
-	font-size:14px;
-}
-
-}
-
-.container{
-	margin: 0 auto;
-	width: 1000 px;
-	max-width: 75%;
-	min-height:75%;
-	border-radius: 25px;
-	padding: 2%;
-	background-color:#ffffff;
-	text-align:center;
-}
-
-#footer{
-	margin: 0 auto;
-	width:100%;
-	height:40px;
-	background-color:#000000;
-}
-
-#footertext{
-	color: #ffffff;
-	font-size:10px;
-	font-family:helvetica;
-	padding: 10px;
 }
 
 @media screen and (max-width:600px){
-	.filmimagecol5{
-	margin: 0 auto;
-	width: 50%;
-	float: left;
-}
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 50%;
+		float: left;
+	}
+	
+	.showtimesleft{ /*showtimes left div*/
+		width: 100%;
+		margin: 0 auto;
+		float: left;
+		text-align: left;
+	}
+	
+	.showtimesright{ /*showtimes right div*/
+		width: 100%;
+		margin: 0 auto;
+		float: right;
+	}
 
-}	
+}
 
 @media screen and (max-width:400px){
 	
-.filmimagecol5{
-	margin: 0 auto;
-	width: 100%;
-	float: left;
-}
+	.filmimagecol5{ /*film image div on home page*/
+		margin: 0 auto;
+		width: 100%;
+		float: left;
+	}
+
 }

@@ -1,34 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Bookingdate:</strong>
-  <%= @booking.bookingdate %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @booking.status %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @booking.user %>
-</p>
-
-
-<br><br>
-Showing | Filmtitle | Screenname | Seat | Price
-<br><br>
-
+  <b>Booking Date:</b> <%= @booking.bookingdate %> <br> <b>Status: </b> <%= @booking.status %><br>
       <%  @bookingshowings = Bookingshowing.where(booking_id: @booking.id) %>
       <%  @bookingshowings.each do |bookingshowing| %>
-        <%= bookingshowing.showing_id %> | <%= bookingshowing.filmtitle %> |<%= bookingshowing.screenname %> | <%= bookingshowing.seat %> | <%= bookingshowing.price %>
+        <b>Film: </b><%= bookingshowing.filmtitle %> <br> <b>Screen: </b><%= bookingshowing.screenname %><br><b>Seat: </b><%= bookingshowing.seat %><br><b>Price:</b><%= number_to_currency(bookingshowing.price, :unit => '€') %></p>
         <br>
       <% end %>
     <br><br>
 <% if admin_signed_in? %>
-  <%= link_to 'Edit', edit_booking_path(@booking) %> |
+  <%= link_to 'Edit', edit_booking_path(@booking), :class => "link" %> |
 <% end %> 
 
-<%= link_to 'Back', bookings_path %>
+<%= link_to 'Back', bookings_path, :class => "link" %>
 

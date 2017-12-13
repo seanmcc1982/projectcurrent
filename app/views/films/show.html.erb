@@ -1,34 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @film.title %>
-</p>
+<div class = "filmcontainer">
 
-<p>
-  <strong>Filmcast:</strong>
-  <%= @film.filmcast %>
-</p>
-
-<p>
-  <strong>Plot:</strong>
-  <%= @film.plot %>
-</p>
-
-<p>
-  <strong>Poster url:</strong>
-  <%= @film.poster_url %>
-</p>
-
-<p>
-  <strong>Trailer url:</strong>
-  <%= @film.trailer_url %>
-</p>
-
-<p>
-  <strong>Runtime:</strong>
-  <%= @film.runtime %>
-</p>
-
-<%= link_to 'Edit', edit_film_path(@film) %> |
-<%= link_to 'Back', films_path %>
+    <div class="filmdetails">
+        <h3><%= @film.title %></h3>
+        <p class="center"> <%= link_to (image_tag @film.poster_url, :class => "filmposter"), @film %></p>
+        <p> <b>Starring: </b><%= @film.filmcast %></p>
+        <p> <b>Synopsis: </b><%= @film.plot %></p>
+        <p> <b>View Trailer: </b> <%= link_to  (@film.trailer_url), @film.trailer_url %> </p>
+        <p> <b>Runtime: </b> <%= @film.runtime %> minutes </p>
+        <% if admin_signed_in? %>
+             <%= link_to 'Edit', edit_film_path(@film), :class => "link" %> | <%= link_to 'Destroy', @film, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %>
+        <% end %>
+    </div>
+    <br>
+    <%= link_to 'View All Films', films_path, :class => "link" %>
+</div>
+    

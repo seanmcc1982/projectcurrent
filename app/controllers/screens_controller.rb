@@ -1,15 +1,65 @@
 class ScreensController < ApplicationController
-  before_action :set_screen, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_admin!
+    before_action :set_screen, only: [:show, :edit, :update, :destroy]
 
   # GET /screens
   # GET /screens.json
   def index
     @screens = Screen.all
+   
+   
+      
   end
 
   # GET /screens/1
   # GET /screens/1.json
+  
   def show
+     @lastscreen = Screen.last
+    
+    #if @lastscreen.seating.nil? 
+
+    if @lastscreen.seating == "" || @lastscreen.seating.nil?
+      
+      rows = @lastscreen.rows
+      width = @lastscreen.width
+      
+  #    puts 'rows: ' +  rows.to_s
+  #    puts 'width: ' + width.to_s
+      
+      letterarray = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" 
+      seatarr = ""
+        i = 0 
+        index = 0
+        while i < rows do
+            j = 1001
+            while j < width+1001 do 
+              temps = letterarray[i, 1].to_s 
+              
+      #        puts 'j:' + j.to_s
+      #        puts temps
+      #        puts '(j).to_s[2,4]  ' + (j).to_s[2,4]
+              temps += (j).to_s[2,4]
+              
+     #         puts temps
+              
+              temps += 'N '
+     #         puts temps
+              seatarr[index] = temps
+              
+              puts 'seatarr[index] ' + seatarr[index]
+              puts 'index: ' + index.to_s
+              index+=5
+              j+=1
+              
+            end
+            i+=1
+        end
+          
+        @lastscreen.update_attributes(:seating => seatarr)
+        @lastscreen.save
+
+    end
   end
 
   # GET /screens/new

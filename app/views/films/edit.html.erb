@@ -1,6 +1,7 @@
 <h1>Editing Film</h1>
 
-<%= render 'form', film: @film %>
+<%= render 'form', film: @film, :class => "link"  %>
+<br>
 
-<%= link_to 'Show', @film %> |
-<%= link_to 'Back', films_path %>
+<%= link_to 'Show', @film, :class => "link"  %> |
+<%= link_to 'Back', films_path, :class => "link"  %>

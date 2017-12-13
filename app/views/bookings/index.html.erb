@@ -3,14 +3,9 @@
 
 <h1>Bookings</h1>
 
-<br>
-      Bookingdate | Status  <% if admin_signed_in? %> | User <% end %>
-        
-<br>
-
     <% if user_signed_in? %>
       <% @bookings.where(user_id: current_user.id).each do |booking| %>
-        <%= booking.bookingdate %> | <%= booking.status %> | <%= link_to 'Show', booking %> 
+        <b>Booking Date: </b><%= booking.bookingdate %> | <b>Status: </b><%= booking.status %> | <%= link_to 'Show', booking, :class => "link" %> 
         <br>
       <% end %>
       
@@ -18,20 +13,20 @@
       <% @bookings.each do |booking| %>
        <% @thisuser = User.where(id: booking.user_id) %>
          <% @thisuser.each do |userinquestion| %>
-            <%= booking.bookingdate %> | <%= booking.status %> | <%= userinquestion.email %>
+            <b>Booking Date: </b><%= booking.bookingdate %> | <b>Status: </b><%= booking.status %> | <b>User: </b> <%= userinquestion.email %>
             <% if user_signed_in? || admin_signed_in? %>
-              <%= link_to 'Show', booking %> |
+              <%= link_to 'Show', booking, :class => "link"  %> |
             <% end %>
             <% if admin_signed_in? %>
-              <%= link_to 'Edit', edit_booking_path(booking) %> |
-              <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to 'Edit', edit_booking_path(booking), :class => "link" %> |
+              <%= link_to 'Destroy', booking, method: :delete, data: { confirm: 'Are you sure?' }, :class => "link" %>
+              <br>
             <% end %>
           <br>
         <% end %>
       <% end %>
     <% end %>
-    
-<br>
+
 <br>
 
 
